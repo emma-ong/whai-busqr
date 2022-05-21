@@ -1,4 +1,4 @@
-##About the App - 'busqr'
+#About the App - 'busqr'
 
 Minimum Viable Product: 
 - A 7-day project completed in the final week of EDA's Whai 2022 Cohort 
