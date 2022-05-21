@@ -1,0 +1,29 @@
+
+.main-background {
+ background-image: url('/images/blurredbg.jpg');
+  background-size:cover;
+  height: 190vh;
+}
+
+
+.navButton {
+  float: right;
+  margin-right: 10%;
+  margin-top: 2%;
+}
+
+.menuHeader{
+  font-family:'Shadows Into Light', cursive;
+}
+
+.menuLink {
+  font-size: 150%;
+}
+
+.selectBar {
+  width: 50%;
+}
+
+
+
+
