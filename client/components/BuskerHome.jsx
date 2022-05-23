@@ -20,10 +20,10 @@ function BuskerHome() {
   }
 
   useEffect(() => {
-    if(!user.name){
+    if(user.name == "Error"){
       location.reload()
     }
-  },[])
+  },[user])
 
   return (
     <>
