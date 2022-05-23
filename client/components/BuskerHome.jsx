@@ -1,26 +1,31 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import ModalPersonal from './ModalPersonal'
 import Earnings from './Earnings'
 import { useAuth0 } from '@auth0/auth0-react'
 
+
 import { Box, Container, Heading, Stack, Button } from '@chakra-ui/react'
+
 
 function BuskerHome() {
   const { logout } = useAuth0()
-
   const user = useSelector((state) => state.signedIn)
-  console.log(user)
+  
 
   const handleLogout = (e) => {
     e.preventDefault()
     logout()
   }
 
+  useEffect(() => {
+
+  },[user])
+
   return (
     <>
-      {user.name ? (
+      {user && (
         <Container maxW={'3xl'} h={'100vh'}>
           <Box textAlign={'center'} py={18}>
             <Heading
@@ -103,9 +108,9 @@ function BuskerHome() {
             </Stack>
           </Box>
         </Container>
-      ) : (
-        <Button onClick={handleLogout}>Logout</Button>
-      )}
+      )} 
+      {!user && <Button onClick={handleLogout}>Logout</Button>}
+      
     </>
   )
 }

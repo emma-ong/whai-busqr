@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
-import { addNewUser, addProfilePic } from '../actions'
+import { addNewUser, addProfilePic, setSignedIn } from '../actions'
+
 
 import {
   AlertIcon, 

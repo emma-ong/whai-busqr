@@ -3,10 +3,12 @@ import request from 'superagent'
 const rootUrl = '/api/v1/users'
 
 export async function addUser(user) {
+  console.log('reaching api')
   return request
     .post(rootUrl)
     .send(user)
     .then((routeRes) => {
+      console.log(routeRes.body)
       return routeRes.body
     })
     .catch((err) => {
