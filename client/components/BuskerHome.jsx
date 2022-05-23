@@ -23,6 +23,7 @@ function BuskerHome() {
     window.onerror = function() {
       location.reload();
     }
+    window.onerror()
   },[user])
 
   return (
