@@ -89,8 +89,9 @@ const Registration = () => {
   }
 
   function handleSubmit() {
-    navigate('/')
-    return dispatch(addNewUser(newUser)).catch((err) => console.log(err))
+    return dispatch(addNewUser(newUser))
+    .then(() => navigate('/'))
+    .catch((err) => console.log(err))
   }
 
   function handleChangePic(e) {
