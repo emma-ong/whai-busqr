@@ -91,11 +91,9 @@ const Registration = () => {
     })
   }
 
-  function handleSubmit (e) {
-    e.preventDefault()
+  function handleSubmit () {
     setSubmitted(true)
-    return dispatch(addNewUser(newUser))
-    .catch((err) => console.log(err))
+    dispatch(addNewUser(newUser))
   }
 
   function handleChangePic(e) {
@@ -369,9 +367,7 @@ const Registration = () => {
             _hover={{
               bg: 'blue.500',
             }}
-            onClick={() => {
-              handleSubmit()
-            }}
+            onClick={handleSubmit}
           >
             Submit
           </Button>
