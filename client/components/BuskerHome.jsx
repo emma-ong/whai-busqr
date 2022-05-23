@@ -24,7 +24,7 @@ function BuskerHome() {
       location.reload();
     }
     window.onerror()
-  },[user])
+  },[])
 
   return (
     <>
