@@ -381,7 +381,7 @@ const Registration = () => {
             _hover={{
               bg: 'blue.500',
             }}
-            onClick={() => goHome()}
+            onClick={goHome}
           >
             Home
           </Button>

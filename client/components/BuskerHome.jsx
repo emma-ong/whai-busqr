@@ -20,7 +20,7 @@ function BuskerHome() {
   }
 
   useEffect(() => {
-
+    console.log(user)
   },[user])
 
   return (
