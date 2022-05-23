@@ -92,7 +92,7 @@ const Registration = () => {
   }
 
   function handleSubmit (e) {
-    e.preventdefault()
+    e.preventDefault()
     setSubmitted(true)
     return dispatch(addNewUser(newUser))
     .catch((err) => console.log(err))
