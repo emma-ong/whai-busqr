@@ -20,10 +20,7 @@ function BuskerHome() {
   }
 
   useEffect(() => {
-    window.onerror = function() {
-      location.reload();
-    }
-    window.onerror()
+    location.reload()
   },[])
 
   return (
