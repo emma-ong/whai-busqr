@@ -11,7 +11,6 @@ function BuskerHome() {
   const { logout } = useAuth0()
 
   const user = useSelector((state) => state.signedIn)
-  const [busker, setBusker] = useState({})
   console.log(user)
 
   const handleLogout = (e) => {
@@ -19,15 +18,9 @@ function BuskerHome() {
     logout()
   }
 
-  useEffect(() => {
-   if(user.name){
-    setBusker(user)
-   }
-  }, [user])
-
   return (
     <>
-      {busker ? (
+      {user.name ? (
         <Container maxW={'3xl'} h={'100vh'}>
           <Box textAlign={'center'} py={18}>
             <Heading
@@ -44,7 +37,7 @@ function BuskerHome() {
               fontSize={'6xl'}
               fontFamily="'Shadows Into Light', cursive;"
             >
-              {busker.name}
+              {user.name}
             </Heading>
 
             <Stack
@@ -62,7 +55,7 @@ function BuskerHome() {
                 borderWidth="1px"
                 borderColor="whiteAlpha.900"
               >
-                <Earnings total={busker.earnings} />
+                <Earnings total={user.earnings} />
               </Box>
               <Box
                 p={10}
@@ -87,9 +80,9 @@ function BuskerHome() {
                 bgGradient="linear(to-r, #0A103A, #1B235B)"
               >
                 <ModalPersonal
-                  bio={busker.bio}
-                  location={busker.location}
-                  email={busker.email}
+                  bio={user.bio}
+                  location={user.location}
+                  email={user.email}
                 />
               </Box>
               <Box
@@ -104,7 +97,7 @@ function BuskerHome() {
                   color="white"
                   fontFamily="'Shadows Into Light', cursive;"
                 >
-                  <Link to={`/paybusker/${busker.id}`}>Your Public Page</Link>
+                  <Link to={`/paybusker/${user.id}`}>Your Public Page</Link>
                 </Heading>
               </Box>
             </Stack>
