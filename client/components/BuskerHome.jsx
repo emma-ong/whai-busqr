@@ -20,7 +20,7 @@ function BuskerHome() {
 
   return (
     <>
-      {user?.name ? (
+      {user.name ? (
         <Container maxW={'3xl'} h={'100vh'}>
           <Box textAlign={'center'} py={18}>
             <Heading

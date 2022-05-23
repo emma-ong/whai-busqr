@@ -110,6 +110,10 @@ const Registration = () => {
     })
   }
 
+  function goHome() {
+    navigate('/')
+  }
+
   return (
     <Flex minH={'100vh'} align={'center'} justify={'center'} bg="none">
       <Stack
@@ -122,6 +126,13 @@ const Registration = () => {
         p={6}
         my={12}
       >
+        {submitted ? 
+          <Alert status='success'>
+            <AlertIcon />
+              You are now Registered! 
+          </Alert> : 
+          null
+         }
         <Heading lineHeight={1.1} fontSize={{ base: '2xl', sm: '3xl' }}>
           Busker Registration
         </Heading>
@@ -364,10 +375,7 @@ const Registration = () => {
             Submit
           </Button>
           {submitted ? 
-          <><Alert status='success'>
-            <AlertIcon />
-              You are now Registered! 
-          </Alert>
+          
           <Button
             bg={'blue.400'}
             color={'white'}
@@ -375,11 +383,11 @@ const Registration = () => {
             _hover={{
               bg: 'blue.500',
             }}
-            onClick={() => navigate('/')}
+            onClick={() => goHome()}
           >
             Home
           </Button>
-          </>
+          
            : null}
         </Stack>
       </Stack>
