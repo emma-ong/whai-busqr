@@ -21,9 +21,8 @@ const QR = () => {
   }, [user,size])
 
   function getImgUrl(size) {
-    //once buskerId set via registration page, to use this url for testing: http://localhost:3000/paybusker/${buskerId}
     //Scale ratio is 8:3cm
-    QRCode.toDataURL(`https://whai-busqr.herokuapp.com/${user.id}`, {
+    QRCode.toDataURL(`https://emmaong-whai-busqr.herokuapp.com/${user.id}`, {
       scale: size,
     })
       .then((res) => {
