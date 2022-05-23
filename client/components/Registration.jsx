@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { addNewUser, addProfilePic } from '../actions'
 
 import {
+  AlertIcon, 
+  Alert,
   Button,
   Flex,
   FormControl,
@@ -40,6 +42,7 @@ const Registration = () => {
   const dispatch = useDispatch()
 
   const authData = useSelector((state) => state.authData)
+  const [submitted, setSubmitted] = useState(false)
 
   const [updatePic, setUpdatePic] = useState(null)
   const [newUser, setNewUser] = useState({
@@ -88,15 +91,9 @@ const Registration = () => {
     })
   }
 
-  function handleSubmit() {
+  function handleSubmit () {
+    setSubmitted(true)
     return dispatch(addNewUser(newUser))
-    .then(() => {
-      const user = useSelector((state) => state.signedIn)
-      if(user.name){
-        console.log(user.name)
-        navigate('/')
-      }
-    })
     .catch((err) => console.log(err))
   }
 
@@ -366,6 +363,24 @@ const Registration = () => {
           >
             Submit
           </Button>
+          {submitted ? 
+          <><Alert status='success'>
+            <AlertIcon />
+              You are now Registered! 
+          </Alert>
+          <Button
+            bg={'blue.400'}
+            color={'white'}
+            w="full"
+            _hover={{
+              bg: 'blue.500',
+            }}
+            onClick={() => navigate('/')}
+          >
+            Home
+          </Button>
+          </>
+           : null}
         </Stack>
       </Stack>
     </Flex>
