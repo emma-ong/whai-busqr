@@ -18,6 +18,10 @@ function BuskerHome() {
     logout()
   }
 
+  useEffect(() => {
+    window.location.reload(true)
+  }, [])
+
   return (
     <>
       {user.name ? (
@@ -104,8 +108,7 @@ function BuskerHome() {
           </Box>
         </Container>
       ) : (
-        () => window.location.reload(true)
-        //<Button onClick={handleLogout}>Logout</Button>
+        <Button onClick={handleLogout}>Logout</Button>
       )}
     </>
   )
