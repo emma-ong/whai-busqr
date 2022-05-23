@@ -11,10 +11,10 @@ import { BrowserRouter } from 'react-router-dom'
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
     <Auth0Provider
-      domain={'https://busqr.au.auth0.com'}
-      clientId={'ZdwSgHms6XudIrdhodIOAmb8refxsxSF'}
+      domain={'whai-busqr.au.auth0.com'}
+      clientId={'dcK8w6hHEmQhrtRuBQGByZAWps1XHKDD'}
       redirectUri={window.location.origin}
-      audience='https://busqr/api'
+      audience='https://whai-busqr/api'
     >
 
     <Provider store={store}>

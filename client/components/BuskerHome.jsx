@@ -11,6 +11,7 @@ function BuskerHome() {
   const { logout } = useAuth0()
 
   const user = useSelector((state) => state.signedIn)
+  console.log(user)
 
   const handleLogout = (e) => {
     e.preventDefault()

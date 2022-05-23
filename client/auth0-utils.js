@@ -15,8 +15,9 @@ export async function cacheUser(useAuth0, state) {
           }
           store.dispatch(setAuth(authData))
           store.dispatch(fetchUserByAuth(authData?.auth0Id))
+          console.log(authData)
         } catch (err) {
-          console.error(err)
+          console.error('Error: ' + err)
         }
       }
       return null
