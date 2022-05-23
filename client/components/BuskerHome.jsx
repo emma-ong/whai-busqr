@@ -104,7 +104,8 @@ function BuskerHome() {
           </Box>
         </Container>
       ) : (
-        <Button onClick={handleLogout}>Logout</Button>
+        window.location.reload(true)
+        //<Button onClick={handleLogout}>Logout</Button>
       )}
     </>
   )
