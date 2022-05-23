@@ -90,7 +90,13 @@ const Registration = () => {
 
   function handleSubmit() {
     return dispatch(addNewUser(newUser))
-    .then(() => navigate('/'))
+    .then(() => {
+      const user = useSelector((state) => state.signedIn)
+      if(user.name){
+        console.log(user.name)
+        navigate('/')
+      }
+    })
     .catch((err) => console.log(err))
   }
 
