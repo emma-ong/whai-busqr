@@ -81,9 +81,11 @@
     "webpack-cli": "^4.5.0"
   },
   "dependencies": {
-    "@chakra-ui/react": "^1.8.8",
     "@auth0/auth0-react": "^1.10.1",
     "@chakra-ui/icons": "^1.1.7",
+    "@chakra-ui/react": "^1.8.8",
+    "@stripe/react-stripe-js": "^1.8.0",
+    "@stripe/stripe-js": "^1.29.0",
     "@vscode/sqlite3": "^5.0.7",
     "dotenv": "^16.0.0",
     "express": "^4.17.1",
@@ -103,5 +105,5 @@
   },
   "engines": {
     "node": "16.x"
-}
+  }
 }
