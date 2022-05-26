@@ -24,7 +24,7 @@ import StripeCheckout from 'react-stripe-checkout';
     stripeKey={process.env.STRIPE_PUBLISHABLE_TEST_KEY}
     name= 'busqr'// the pop-in header title
     description={`Thank you for supporting ${busker.name}`}// the pop-in header subtitle
-    amount={busker.payment_option_1 * 100}
+    amount={props.value * 100}
     currency="NZD"
     billingAddress={true}
     zipCode={true}
