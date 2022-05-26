@@ -89,22 +89,10 @@ const PayBusker = () => {
                   {busker.bio}
                 </Text>
               </Box>
-
-              <Button onClick={() => handlePayment(busker.payment_option_1)}>
-                Give ${busker.payment_option_1}
-              </Button>
-              <Button onClick={() => handlePayment(busker.payment_option_2)}>
-                Give ${busker.payment_option_2}
-              </Button>
-              <Button onClick={() => handlePayment(busker.payment_option_3)}>
-                Give ${busker.payment_option_3}
-              </Button>
+              <Payment value={busker.payment_option_1}/>
+              <Payment value={busker.payment_option_2}/>
+              <Payment value={busker.payment_option_3}/>
             </Stack>
-            <Text m={3} color="white" fontSize={'100%'}>
-                  Payment method still in progress
-            </Text>
-            
-            <Payment />
             
           </Box>
          

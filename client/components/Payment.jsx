@@ -1,8 +1,10 @@
 import React from "react"
-// import { CardElement } from "@stripe/react-stripe-js"
+import {useSelector } from 'react-redux'
 import StripeCheckout from 'react-stripe-checkout';
 
- const Payment = () => {
+
+ const Payment = (props) => {
+  const busker = useSelector((state) => state.busker)
   const onToken = (token) => {
     return fetch('/save-stripe-token', {
       method: 'POST',
@@ -15,12 +17,20 @@ import StripeCheckout from 'react-stripe-checkout';
       })
       .catch(err => console.log(err))
   }
-
    return (
     <StripeCheckout
+    label= {`Give $${props.value}`}
     token={onToken}
     stripeKey={process.env.STRIPE_PUBLISHABLE_TEST_KEY}
-  />
+    name= 'busqr'// the pop-in header title
+    description={`Thank you for supporting ${busker.name}`}// the pop-in header subtitle
+    amount={busker.payment_option_1 * 100}
+    currency="NZD"
+    billingAddress={true}
+    zipCode={true}
+    allowRememberMe
+    />
+
    )
 
  }
