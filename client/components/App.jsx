@@ -15,7 +15,6 @@ import Registration from './Registration'
 
 function App() {
   cacheUser(useAuth0)
-
   return (
     <div className="main-background">
       <Nav />
@@ -27,7 +26,7 @@ function App() {
             fontSize="15vh"
             fontFamily="'Shadows Into Light', cursive;"
           >
-            busqr
+            busqr {process.env.TESTING}
           </Heading>
           <IfNotAuthenticated>
             <Routes>
