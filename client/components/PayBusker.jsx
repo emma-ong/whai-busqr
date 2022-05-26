@@ -103,19 +103,8 @@ const PayBusker = () => {
             <Text m={3} color="white" fontSize={'100%'}>
                   Payment method still in progress
             </Text>
-            <Box
-            flexWrap={'wrap'}
-            textAlign={'center'}
-            py={18}
-            bg="beige"
-            borderWidth="1px"
-            // w={'80vw'}
-            borderRadius={25}
-            // p={10}
-            borderColor="whiteAlpha.900"
-            >
+            
             <Payment />
-          </Box>
             
           </Box>
          

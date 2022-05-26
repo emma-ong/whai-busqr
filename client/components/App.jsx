@@ -26,7 +26,7 @@ function App() {
             fontSize="15vh"
             fontFamily="'Shadows Into Light', cursive;"
           >
-            busqr {process.env.TESTING}
+            busqr
           </Heading>
           <IfNotAuthenticated>
             <Routes>
