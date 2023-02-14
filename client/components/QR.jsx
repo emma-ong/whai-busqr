@@ -22,7 +22,7 @@ const QR = () => {
 
   function getImgUrl(size) {
     //Scale ratio is 8:3cm
-    QRCode.toDataURL(`https://emmaong-whai-busqr.herokuapp.com/${user.id}`, {
+    QRCode.toDataURL(`https://whai-busqr.netlify.app/${user.id}`, {
       scale: size,
     })
       .then((res) => {
