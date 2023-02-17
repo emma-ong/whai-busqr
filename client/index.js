@@ -19,6 +19,7 @@ const stripePromise = loadStripe('pk_test_bxJuE0fpBxauHmThIvNnWtDt')
         clientId={'dcK8w6hHEmQhrtRuBQGByZAWps1XHKDD'}
         redirectUri={window.location.origin}
         audience='https://whai-busqr/api'
+        cacheLocation="localstorage"
       >
 
       <Provider store={store}>
